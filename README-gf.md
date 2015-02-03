@@ -14,3 +14,5 @@
 * async js loads
 * gzipping
 * minify css, js
+* cacheing
+
