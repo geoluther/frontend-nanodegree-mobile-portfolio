@@ -508,14 +508,13 @@ function updatePositions() {
 
   var items = document.querySelectorAll('.mover');
   // add below
-  var phaseInit = Math.sin((document.body.scrollTop / 1250);
+  var bodyInit = document.body.scrollTop / 1250;
+
 
   for (var i = 0; i < items.length; i++) {
-    var phase = phaseInit + (i % 5));
+    var phase = Math.sin( bodyInit + (i % 5) );
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
-    // console.log("phase: " + phase);
-    // console.log("style.left: " + items[i].style.left);
-  }
+   }
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
   // Super easy to create custom metrics.
