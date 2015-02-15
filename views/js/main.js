@@ -449,13 +449,17 @@ var resizePizzas = function(size) {
   }
 
   // Iterates through pizza elements on the page and changes their widths
+  // orig
   function changePizzaSizes(size) {
+      var dx = determineDx(document.querySelector(".randomPizzaContainer"), size);
+      var newwidth = (document.querySelector(".randomPizzaContainer").offsetWidth + dx) + 'px';
+      var x = document.querySelectorAll(".randomPizzaContainer");
+
     for (var i = 0; i < document.querySelectorAll(".randomPizzaContainer").length; i++) {
-      var dx = determineDx(document.querySelectorAll(".randomPizzaContainer")[i], size);
-      var newwidth = (document.querySelectorAll(".randomPizzaContainer")[i].offsetWidth + dx) + 'px';
-      document.querySelectorAll(".randomPizzaContainer")[i].style.width = newwidth;
+      x[i].style.width = newwidth;
     }
   }
+
 
   changePizzaSizes(size);
 
@@ -503,9 +507,14 @@ function updatePositions() {
   window.performance.mark("mark_start_frame");
 
   var items = document.querySelectorAll('.mover');
+  // add below
+  var phaseInit = Math.sin((document.body.scrollTop / 1250);
+
   for (var i = 0; i < items.length; i++) {
-    var phase = Math.sin((document.body.scrollTop / 1250) + (i % 5));
+    var phase = phaseInit + (i % 5));
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
+    // console.log("phase: " + phase);
+    // console.log("style.left: " + items[i].style.left);
   }
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
