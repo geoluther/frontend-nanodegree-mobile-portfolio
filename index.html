@@ -24,23 +24,6 @@
 
 </script>
 
-
-    <script async src="http://www.google-analytics.com/analytics.js"></script>
-
-    <script async type="text/javacript">
-    	function logCRP() {
-    		var t = window.performance.timing,
-    		dcl = t.domContentLoadedEventStart - t.domLoading,
-    		complete = t.domComplete - t.domLoading;
-    		var stats = document.getElementById("crp-stats");
-    		stats.textContent = 'DCL: ' + dcl + 'ms, onload: ' + complete + 'ms';
-}
-
-window.addEventListener("load", function(event) {
-  logCRP();
-});
-
-    </script>
  
   </head>
 
@@ -87,5 +70,21 @@ window.addEventListener("load", function(event) {
       <p>&copy; Web Performance 2014 <span id="crp-stats"></span></p>
     </footer>
 
+
+    <script async type="text/javacript">
+    	function logCRP() {
+    		var t = window.performance.timing,
+    		dcl = t.domContentLoadedEventStart - t.domLoading,
+    		complete = t.domComplete - t.domLoading;
+    		var stats = document.getElementById("crp-stats");
+    		stats.textContent = 'DCL: ' + dcl + 'ms, onload: ' + complete + 'ms';
+}
+
+window.addEventListener("load", function(event) {
+  logCRP();
+});
+    </script>
+
+    <script async src="http://www.google-analytics.com/analytics.js"></script>
   </body>
 </html>
