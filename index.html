@@ -9,7 +9,7 @@
 
   <!-- Hmm, what is the impact of web fonts on speed? Measure it... -->
   <!-- link href="//fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" -->
-  <link href="//fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <!-- <link href="//fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> -->
   <!-- <link href="css/style.min.css" rel="stylesheet"> -->
   <link href="css/print.min.css" rel="stylesheet" media="print">
 
@@ -104,6 +104,20 @@
         logCRP();
       });
     </script>
+
+  <script type="text/javascript">
+  WebFontConfig = {
+    google: { families: [ 'Open+Sans::latin' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })(); </script>
 
     <script>
       var cb = function() {
