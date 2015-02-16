@@ -507,9 +507,9 @@ function updatePositions() {
   window.performance.mark("mark_start_frame");
 
   var items = document.querySelectorAll('.mover');
+  
   // define outside loop
   var bodyInit = document.body.scrollTop / 1250;
-
 
   for (var i = 0; i < items.length; i++) {
     var phase = Math.sin( bodyInit + (i % 5) );
