@@ -24,14 +24,9 @@
 
   </script>
 
+<!-- add above the fold css -->
   <style>
-    html {
-      font-size: 100%;
-      overflow-y: scroll;
-      -webkit-tap-highlight-color: rgba(0,0,0,0);
-      -ms-text-size-adjust: 100%;
-      -webkit-text-size-adjust: none;
-    }
+
     body { margin: 0; font-size: 14px; line-height: 1.61; font-weight: 400; }
     body, button, input, select, textarea { font-family: 'Open Sans', sans-serif; color: #333; }
 
@@ -105,32 +100,36 @@
       });
     </script>
 
-  <script type="text/javascript">
-  WebFontConfig = {
-    google: { families: [ 'Open+Sans::latin' ] }
-  };
-  (function() {
-    var wf = document.createElement('script');
-    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-    wf.type = 'text/javascript';
-    wf.async = 'true';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(wf, s);
-  })(); </script>
 
-    <script>
-      var cb = function() {
-        var l = document.createElement('link'); l.rel = 'stylesheet';
-        l.href = 'css/style.min.css';
-        var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
+    <!-- add jscript loading of web fonts from google font page -->
+    <script type="text/javascript">
+      WebFontConfig = {
+        google: { families: [ 'Open+Sans::latin' ] }
       };
-      var raf = requestAnimationFrame || mozRequestAnimationFrame ||
-      webkitRequestAnimationFrame || msRequestAnimationFrame;
-      if (raf) raf(cb);
-      else window.addEventListener('load', cb);
-    </script>
+      (function() {
+        var wf = document.createElement('script');
+        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+        '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+      })(); </script>
 
-    <script async src="http://www.google-analytics.com/analytics.js"></script>
-  </body>
-  </html>
+
+      <!-- load css with js function after above the fold content -->
+      <script>
+        var cb = function() {
+          var l = document.createElement('link'); l.rel = 'stylesheet';
+          l.href = 'css/style.min.css';
+          var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
+        };
+        var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+        webkitRequestAnimationFrame || msRequestAnimationFrame;
+        if (raf) raf(cb);
+        else window.addEventListener('load', cb);
+      </script>
+
+      <script async src="http://www.google-analytics.com/analytics.js"></script>
+    </body>
+    </html>
