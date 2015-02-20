@@ -1,0 +1,29 @@
+
+var gulp = require('gulp');
+var minifyCSS = require('gulp-minify-css');
+var uglify = require('gulp-uglify');
+
+
+gulp.task('default', function() {
+ // write tasks here
+});
+
+
+
+gulp.task('compress', function() {
+	gulp.src('./js/*.js')
+	    .pipe(uglify())
+	    .pipe(gulp.dest('./dist'))
+});
+
+
+
+gulp.task('minify-css', function() {
+	gulp.src('./css/*.css')
+	    .pipe(minifyCSS({keepBreaks:false}))
+	    .pipe(gulp.dest('./dist'))
+});
+
+
+
+

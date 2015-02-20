@@ -1,0 +1,1 @@
+function logCRP(){var o=window.performance.timing,n=o.domContentLoadedEventStart-o.domLoading,t=o.domComplete-o.domLoading,e=document.getElementById("crp-stats");e.textContent="DCL: "+n+"ms, onload: "+t+"ms"}window.addEventListener("load",function(){logCRP()});var error={};
