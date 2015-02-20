@@ -12,8 +12,6 @@
 * optimize images with gulp, based on http://travismaynard.com/writing/getting-started-with-gulp
 
 
-
-
 ### Optimization Strategies
 
 1. Reduce resource size
