@@ -8,6 +8,16 @@ var jshint = require('gulp-jshint');
 var rename = require('gulp-rename');
 var sass = require('gulp-sass');
 var concat = require('gulp-concat');
+var imageop = require('gulp-image-optimization');
+ 
+gulp.task('images', function(cb) {
+	gulp.src(['src/**/*.png','src/**/*.jpg','src/**/*.gif','src/**/*.jpeg'])
+              .pipe(imageop({coptimizationLevel: 5,
+	                progressive: true,
+			interlaced: true
+			})).pipe(gulp.dest('./images')).on('end', cb).on('error', cb);
+    });
+
 
 gulp.task('lint', function() {
 	return gulp.src('js/*.js')
@@ -54,7 +64,7 @@ gulp.task('watch', function() {
     });
 
 
-gulp.task('default', ['lint', 'minify-css', 'scripts', 'watch']);
+gulp.task('default', ['lint', 'minify-css', 'scripts', , 'images', 'watch']);
 
 /*
 gulp.task('default', function() {
