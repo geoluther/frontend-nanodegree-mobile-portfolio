@@ -73,7 +73,7 @@ gulp.task('watch', function() {
     });
 
 
-gulp.task('default', ['lint', 'minify-css', 'scripts', , 'images', 'watch']);
+gulp.task('default', ['lint', 'minify-css', 'scripts', 'images', 'pizza-images', 'watch']);
 
 /*
 gulp.task('default', function() {
