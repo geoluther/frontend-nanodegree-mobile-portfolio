@@ -9,7 +9,9 @@ var rename = require('gulp-rename');
 var sass = require('gulp-sass');
 var concat = require('gulp-concat');
 var imageop = require('gulp-image-optimization');
- 
+
+
+
 gulp.task('images', function(cb) {
 	gulp.src(['src/**/*.png','src/**/*.jpg','src/**/*.gif','src/**/*.jpeg'])
               .pipe(imageop({coptimizationLevel: 5,
@@ -18,6 +20,13 @@ gulp.task('images', function(cb) {
 			})).pipe(gulp.dest('./images')).on('end', cb).on('error', cb);
     });
 
+gulp.task('pizza-images', function(cb) {
+        gulp.src(['views/images-src/*.png','views/images/*.jpg','views/images/*.gif','views/images/*.jpeg'])
+	    .pipe(imageop({coptimizationLevel: 5,
+			    progressive: true,
+			    interlaced: true
+			    })).pipe(gulp.dest('./views/images')).on('end', cb).on('error', cb);
+    });
 
 gulp.task('lint', function() {
 	return gulp.src('js/*.js')
