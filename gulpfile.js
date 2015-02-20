@@ -1,4 +1,4 @@
-// pulled from:
+// based on:
 // http://travismaynard.com/writing/getting-started-with-gulp
 
 var gulp = require('gulp');
@@ -6,8 +6,11 @@ var minifyCSS = require('gulp-minify-css');
 var uglify = require('gulp-uglify');
 var jshint = require('gulp-jshint');
 var rename = require('gulp-rename');
+
+// don't really need sass or concat
 var sass = require('gulp-sass');
 var concat = require('gulp-concat');
+
 var imageop = require('gulp-image-optimization');
 
 
@@ -39,6 +42,7 @@ gulp.task('compress', function() {
 	    .pipe(uglify())
 	    .pipe(gulp.dest('./dist/css/'))
 });
+
 
 gulp.task('scripts', function() {
 	return gulp.src('js/*.js')
@@ -73,7 +77,7 @@ gulp.task('watch', function() {
     });
 
 
-gulp.task('default', ['lint', 'minify-css', 'scripts', 'images', 'pizza-images', 'watch']);
+gulp.task('default', ['lint', 'minify-css', 'compress', 'images', 'pizza-images', 'watch']);
 
 /*
 gulp.task('default', function() {
