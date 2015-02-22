@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-var gulp = require('gulp');
-
-gulp.task('default', function() {
- // write tasks here
-});
-=======
 // based on:
 // http://travismaynard.com/writing/getting-started-with-gulp
 
@@ -92,4 +85,3 @@ gulp.task('default', function() {
 });
 */
 
->>>>>>> gh-pages
